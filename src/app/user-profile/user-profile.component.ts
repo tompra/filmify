@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 type User = {
   _id: string;
@@ -29,11 +30,11 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    console.log(this.userData);
     this.fetchUserData();
     this.userData = {
       username: this.user.username || '',
@@ -43,16 +44,27 @@ export class UserProfileComponent implements OnInit {
   }
 
   updateUser(): void {
-    console.log('updateUser is clicked');
+    console.log('update btn clicked');
+    this.fetchApiData.editUser(this.userData).subscribe((result) => {
+      console.log('result', result);
+      localStorage.setItem('user', JSON.stringify(result));
+      this.snackBar.open('User updated succesfully', 'OK', { duration: 2000 });
+    });
   }
 
   deleteUser(): void {
     console.log('deleteUser is clicked');
+    this.fetchApiData.deleteUser().subscribe((result) => {
+      console.log('result', result);
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
+      this.snackBar.open('User deleted succesfully', 'OK', { duration: 2000 });
+      this.router.navigate(['welcome']);
+    });
   }
 
   fetchUserData(): void {
     const userData = JSON.parse(localStorage.getItem('user') || '');
-    console.log(userData);
     if (userData._id) {
       this.user = userData as User;
     }
