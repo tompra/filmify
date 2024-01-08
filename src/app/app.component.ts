@@ -11,21 +11,11 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 })
 export class AppComponent {
   title = 'filmify-client';
-  constructor(public dialog: MatDialog) {}
+  // constructor(public dialog: MatDialog) {}
 
-  openUserRegistrationDialog(): void {
-    this.dialog.open(UserRegistrationFormComponent, {
-      width: '300px',
-    });
-  }
-  openUserLoginDialog(): void {
-    this.dialog.open(UserLoginFormComponent, {
-      width: '300px',
-    });
-  }
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '500px',
-    });
-  }
+  // openMoviesDialog(): void {
+  //   this.dialog.open(MovieCardComponent, {
+  //     width: '500px',
+  //   });
+  // }
 }
