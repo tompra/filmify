@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+<div>
+  <h1>User Profile</h1>
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        placeholder="Username"
+        type="text"
+        name="username"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="hide ? 'password' : 'text'"
+        name="password"
+        required
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" type="email" name="email" required
+    /></mat-form-field>
+    <button mat-raised-button (click)="updateUser()" color="primary">
+      Update
+    </button>
+    <button mat-raised-button (click)="deleteUser()" color="warn">
+      Delete
+    </button>
+  </form>
+</div>
