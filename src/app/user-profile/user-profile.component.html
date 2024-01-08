@@ -9,6 +9,7 @@
         placeholder="Username"
         type="text"
         name="username"
+        [(ngModel)]="userData.username"
         required
       />
     </mat-form-field>
@@ -19,6 +20,7 @@
         placeholder="Password"
         [type]="hide ? 'password' : 'text'"
         name="password"
+        [(ngModel)]="userData.password"
         required
       />
       <button
@@ -33,7 +35,13 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Email" type="email" name="email" required
+      <input
+        matInput
+        placeholder="Email"
+        type="email"
+        name="email"
+        [(ngModel)]="userData.email"
+        required
     /></mat-form-field>
     <button mat-raised-button (click)="updateUser()" color="primary">
       Update
