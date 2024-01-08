@@ -49,7 +49,7 @@ export class FetchApiDataService {
   getMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'movies/' + title, {
+      .get(`${apiUrl}movies/${title}`, {
         headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
       })
       .pipe(
@@ -62,7 +62,7 @@ export class FetchApiDataService {
   getDirector(director: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'director/' + director, {
+      .get(`${apiUrl}director/${director}`, {
         headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
       })
       .pipe(
@@ -75,7 +75,7 @@ export class FetchApiDataService {
   getGenre(genre: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'genre/' + genre, {
+      .get(`${apiUrl}genre/${genre}`, {
         headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
       })
       .pipe(
@@ -85,10 +85,10 @@ export class FetchApiDataService {
   }
 
   // getUser
-  getUser(userName: string): Observable<any> {
+  getUser(username: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'users/' + userName, {
+      .get(`${apiUrl}users/${username}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

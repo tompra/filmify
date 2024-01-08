@@ -1,1 +1,10 @@
-<p>movie-description works!</p>
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div>
+  <p><strong>Description:</strong> {{ data.description }}</p>
+  <p><strong>Director:</strong>{{ data.director }}</p>
+  <p><strong>Genre:</strong>{{ data.genre }}</p>
+  <p><strong>Actors:</strong>{{ data.actors }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="'close'">Close</button>
+</div>

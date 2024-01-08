@@ -1,1 +1,11 @@
-<p>director works!</p>
+<h1 mat-dialog-title>{{ data.name }}</h1>
+<div>
+  <p><strong>Bio:</strong> {{ data.bio }}</p>
+  <p><strong>Birth:</strong> {{ data.birth | date : "mediumDate" }}</p>
+  <p *ngIf="data.death">
+    <strong>Death:</strong> {{ data.death | date : "mediumDate" }}
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="'close'">Close</button>
+</div>
