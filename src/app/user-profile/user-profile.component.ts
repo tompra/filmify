@@ -26,7 +26,12 @@ export class UserProfileComponent implements OnInit {
     favoriteMovies: [],
   };
 
-  @Input() userData = { username: '', password: '', email: '' };
+  @Input() userData = {
+    username: '',
+    password: '',
+    email: '',
+    favoriteMovies: [],
+  };
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -40,6 +45,7 @@ export class UserProfileComponent implements OnInit {
       username: this.user.username || '',
       password: this.user.password || '',
       email: this.user.email || '',
+      favoriteMovies: this.user.favoriteMovies || [],
     };
   }
 

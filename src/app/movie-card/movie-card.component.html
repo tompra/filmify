@@ -26,7 +26,15 @@
         ><button mat-raised-button color="primary" (click)="getMovie(movie)">
           Synopsis
         </button>
-        <mat-icon>favorite_border</mat-icon>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="toggleFavoriteMovies(movie)"
+        >
+          <mat-icon>{{
+            movie.isFavorite ? "favorite" : "favorite_border"
+          }}</mat-icon>
+        </button>
       </mat-card-actions>
     </mat-dialog-content>
   </mat-card>

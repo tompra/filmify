@@ -16,4 +16,11 @@ export class NavBarComponent {
     console.log('go home clicked');
     this.router.navigate(['movies']);
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+
+    this.router.navigate(['welcome']);
+  }
 }
