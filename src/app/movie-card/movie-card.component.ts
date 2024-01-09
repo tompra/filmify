@@ -76,13 +76,37 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
-  addFavoriteMovie(movieID: any): void {
-    console.log('movieID', movieID);
-    movieID.isFavorite = true;
+  addFavoriteMovie(movie: any): void {
+    console.log('movieID ADD', movie);
+    this.fetchApiData.addFavoriteMovie(movie._id).subscribe(
+      (data) => {
+        console.log(data);
+        this.snackBar.open('Added to favorites', 'OK', { duration: 2000 });
+        movie.isFavorite = true;
+      },
+      (error) => {
+        console.error('Error adding from favorites', error);
+        this.snackBar.open('Failed to add to favories', 'OK', {
+          duration: 2000,
+        });
+      }
+    );
   }
 
-  removeFavoriteMovie(movieID: any): void {
-    console.log('movieID', movieID);
-    movieID.isFavorite = false;
+  removeFavoriteMovie(movie: any): void {
+    console.log('movie remove', movie);
+    this.fetchApiData.removeFavoriteMovie(movie._id).subscribe(
+      (data) => {
+        console.log(data);
+        this.snackBar.open('Remove from favorites', 'OK', { duration: 2000 });
+        movie.isFavorite = false;
+      },
+      (error) => {
+        console.error('Error removing from favorites', error);
+        this.snackBar.open('Failed to remove from favories', 'OK', {
+          duration: 2000,
+        });
+      }
+    );
   }
 }
