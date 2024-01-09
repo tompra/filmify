@@ -1,6 +1,6 @@
-<mat-card>
+<mat-card class="login-container">
   <mat-card-header>
-    <mat-card-title>Login!</mat-card-title>
+    <mat-card-title>Login to Filmify</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
@@ -27,7 +27,12 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="userLogin()" color="primary">
+    <button
+      mat-raised-button
+      (click)="userLogin()"
+      color="primary"
+      id="form-login-btn"
+    >
       Login
     </button>
   </mat-card-actions>
