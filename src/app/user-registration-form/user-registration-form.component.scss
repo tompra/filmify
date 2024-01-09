@@ -1,0 +1,31 @@
+@import "/src/styles/variables";
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  border: none;
+}
+.mat-mdc-card-header {
+  justify-content: center;
+  margin: 1rem 0;
+}
+.mat-mdc-card-title {
+  color: $text-color;
+  font-size: $title-font-size;
+}
+.mdc-card__actions {
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#form-signup-btn {
+  background-color: $button-bg;
+  color: $button-text;
+  font-size: 14px;
+  font-weight: bold;
+}
