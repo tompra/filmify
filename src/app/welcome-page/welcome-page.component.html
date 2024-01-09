@@ -1,15 +1,21 @@
-<div class="main-page">
+<div class="welcome-container">
   <h1>Welcome to Filmify!</h1>
-  <div class="buttons-container">
-    <button
-      mat-raised-button
-      (click)="openUserRegistrationDialog()"
-      color="primary"
-    >
-      Sign Up
-    </button>
-    <button mat-raised-button color="primary" (click)="openUserLoginDialog()">
-      Login
-    </button>
+  <div class="welcome-content-container">
+    <p>
+      Are you ready to dive into the world of movies? <b>Filmify</b> is your
+      go-to platform. Explore and enjoy a collection of movies
+    </p>
+    <div class="welcome-btns">
+      <button
+        mat-raised-button
+        (click)="openUserRegistrationDialog()"
+        id="signup-btn"
+      >
+        Sign Up
+      </button>
+      <button mat-raised-button (click)="openUserLoginDialog()" id="login-btn">
+        Login
+      </button>
+    </div>
   </div>
 </div>

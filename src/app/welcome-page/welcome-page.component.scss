@@ -1,0 +1,34 @@
+@import "/src/styles/variables";
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $primary-color;
+}
+h1 {
+  color: $text-color;
+}
+
+.welcome-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  text-align: center;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  max-width: 30rem;
+}
+
+#signup-btn,
+#login-btn {
+  background-color: $button-bg;
+  color: $button-text;
+  margin: 0 1rem;
+  font-size: $button-size;
+  font-weight: bold;
+}
