@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: $primary-color;
+  background-color: $bg-color;
 }
 h1 {
   color: $text-color;
@@ -16,12 +16,16 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $primary-color;
+  padding: 1rem;
+  border-radius: 1em;
 }
 p {
   text-align: center;
   line-height: 1.6;
   margin: 1.5rem 0;
   max-width: 30rem;
+  color: $text-color;
 }
 
 #signup-btn,
