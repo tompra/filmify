@@ -1,7 +1,11 @@
-<h1 mat-dialog-title>{{ data.name }}</h1>
-<div>
-  <p><strong>Description:</strong> {{ data.description }}</p>
-</div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="'close'">Close</button>
+<div class="genre-container">
+  <h1 mat-dialog-title>{{ data.name }}</h1>
+  <div class="genre-content">
+    <p><strong>Description:</strong> {{ data.description }}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="'close'" color="warn">
+      Close
+    </button>
+  </div>
 </div>
