@@ -112,6 +112,11 @@ export class FetchApiDataService {
         catchError(this.handleError)
       );
   }
+  //check if is favorite movie
+  isFavoriteMovie(movieId: string): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user.favoriteMovies.indexOf(movieId) >= 0;
+  }
 
   // addFavoriteMovie
   addFavoriteMovie(movieID: string): Observable<any> {
