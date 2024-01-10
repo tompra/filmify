@@ -1,0 +1,24 @@
+@import "/src/styles/variables";
+
+.movie-description-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-color;
+  h1 {
+    background-color: $secondary-color;
+    color: $text-color;
+    font-size: $title-font-size;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .movie-description-content {
+    padding: 0.5rem;
+    p {
+      color: $text-color;
+      line-height: 1.5;
+    }
+  }
+  .mat-mdc-dialog-actions {
+    justify-content: center;
+  }
+}
