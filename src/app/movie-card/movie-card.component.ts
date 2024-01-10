@@ -109,4 +109,8 @@ export class MovieCardComponent implements OnInit {
       }
     );
   }
+
+  isFavMovie(movieID: string): boolean {
+    return this.fetchApiData.isFavoriteMovie(movieID);
+  }
 }

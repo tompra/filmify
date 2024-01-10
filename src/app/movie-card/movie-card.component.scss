@@ -1,0 +1,51 @@
+@import "/src/styles/variables";
+
+.movie-card-container {
+  background-color: $bg-color;
+  .movie-card-layout {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    margin: 1rem;
+    padding-bottom: 1rem;
+  }
+  .movie-card {
+    background-color: $primary-color;
+    color: $text-color;
+    border-radius: 10px;
+  }
+  .mat-mdc-card-header {
+    background-color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 38px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: $title-font-size;
+    font-weight: bold;
+  }
+  .mat-mdc-dialog-content {
+    max-height: 75vh;
+  }
+  .movie-card-img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .movie-card-btns {
+    display: flex;
+    justify-content: space-around;
+  }
+  #director-btn,
+  #genre-btn,
+  #synopsis-btn {
+    background-color: $button-bg-secondary;
+    color: $button-text;
+    font-size: $button-size;
+    font-weight: bold;
+    margin-right: 0.4rem;
+  }
+}

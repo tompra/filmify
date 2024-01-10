@@ -1,41 +1,50 @@
-<app-nav-bar></app-nav-bar>
-<div style="display: flex">
-  <mat-card *ngFor="let movie of movies; let i = index" style="flex: 1 1 auto">
-    <mat-dialog-content>
-      <mat-card-header>
-        <mat-card-title>{{ movie.title }}</mat-card-title>
-      </mat-card-header>
-      <img
-        src="{{ movie.imageUrl }}"
-        alt="{{ movie.title }}"
-        style="width: 150px; object-fit: contain"
-      />
-      <mat-card-actions>
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="getDirector(movie.director)"
-        >
-          Director</button
-        ><button
-          mat-raised-button
-          color="primary"
-          (click)="getGenre(movie.genre)"
-        >
-          Genre</button
-        ><button mat-raised-button color="primary" (click)="getMovie(movie)">
-          Synopsis
-        </button>
-        <button
-          mat-icon-button
-          color="warn"
-          (click)="toggleFavoriteMovies(movie)"
-        >
-          <mat-icon>{{
-            movie.isFavorite ? "favorite" : "favorite_border"
-          }}</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-dialog-content>
-  </mat-card>
+<div class="movie-card-container">
+  <app-nav-bar></app-nav-bar>
+  <div class="movie-card-layout">
+    <mat-card *ngFor="let movie of movies; let i = index" class="movie-card">
+      <mat-dialog-content>
+        <mat-card-header>
+          <mat-card-title>{{ movie.title }}</mat-card-title>
+        </mat-card-header>
+        <img
+          src="{{ movie.imageUrl }}"
+          alt="{{ movie.title }}"
+          class="movie-card-img"
+        />
+        <mat-card-actions class="movie-card-btns">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="getDirector(movie.director)"
+            id="director-btn"
+          >
+            Director</button
+          ><button
+            mat-raised-button
+            color="primary"
+            (click)="getGenre(movie.genre)"
+            id="genre-btn"
+          >
+            Genre</button
+          ><button
+            mat-raised-button
+            color="primary"
+            (click)="getMovie(movie)"
+            id="synopsis-btn"
+          >
+            Synopsis
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="toggleFavoriteMovies(movie)"
+          >
+            <mat-icon>{{
+              movie.isFavorite ? "favorite" : "favorite_border"
+            }}</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-dialog-content>
+    </mat-card>
+  </div>
 </div>
