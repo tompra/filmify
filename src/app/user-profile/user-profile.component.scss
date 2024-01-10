@@ -1,0 +1,41 @@
+@import "/src/styles/variables";
+
+.user-profile-container {
+  background-color: $bg-color;
+  height: 100%;
+
+  h1 {
+    color: $text-color;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .user-profile-content {
+    background-color: $primary-color;
+    height: 20rem;
+    padding: 1rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 100%;
+
+      .mat-mdc-form-field {
+        width: 100%;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+    }
+    .user-profile-btns {
+      display: flex;
+      justify-content: center;
+    }
+    #update-btn {
+      background-color: $button-bg-secondary;
+      font-weight: bold;
+      color: $button-text;
+      margin-right: 0.5rem;
+    }
+  }
+}
