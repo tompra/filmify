@@ -18,6 +18,7 @@ export class FetchApiDataService {
 
   // user registration
   public userRegistration(userDetails: any): Observable<any> {
+    console.log('userDetails login', userDetails);
     return this.http
       .post(`${apiUrl}users`, userDetails)
       .pipe(catchError(this.handleError));
@@ -25,6 +26,7 @@ export class FetchApiDataService {
 
   // user login
   public userLogin(userDetails: any): Observable<any> {
+    console.log('userDetails login', userDetails);
     return this.http
       .post(`${apiUrl}login`, userDetails)
       .pipe(catchError(this.handleError));
@@ -203,15 +205,21 @@ export class FetchApiDataService {
   }
 
   // handling error
-  private handleError(error: HttpErrorResponse): any {
+  private handleError(error: any): Observable<any> {
+    console.error('An error occurred:', error);
+    let errorMessage = 'An error occurred while processing your request.';
+
     if (error.error instanceof ErrorEvent) {
-      console.error('Some error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Error Status code ${error.status} and the Error body is: ${error.error}`
-      );
+      // Client-side errors
+      errorMessage = `Error: ${error.error.message}`;
+    } else if (error.status === 422) {
+      // Server-side validation errors
+      errorMessage = 'Validation error. Please check your input.';
+    } else if (error.status === 500) {
+      // Server-side errors
+      errorMessage = 'Server error. Please try again later.';
     }
 
-    return throwError('Something bad happened, please try again later.');
+    return throwError(errorMessage);
   }
 }
