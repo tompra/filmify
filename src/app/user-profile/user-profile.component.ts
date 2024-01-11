@@ -18,6 +18,7 @@ type User = {
 })
 export class UserProfileComponent implements OnInit {
   hide = true;
+
   user: User = {
     _id: '',
     username: '',
