@@ -28,9 +28,6 @@
             "scripts": []
           },
           "configurations": {
-            "gh-pages": {
-              "baseHref": "/filmify/"
-            },
             "production": {
               "budgets": [
                 {
@@ -53,6 +50,9 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "gh-pages": {
+              "baseHref": "/filmify/"
             }
           },
           "defaultConfiguration": "production"
@@ -85,6 +85,9 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

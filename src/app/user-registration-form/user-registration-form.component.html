@@ -3,7 +3,7 @@
     <mat-card-title>Sign up to Filmify</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
+    <form #signupForm="ngForm">
       <mat-form-field>
         <input
           matInput
@@ -19,10 +19,17 @@
           matInput
           [(ngModel)]="userData.password"
           type="password"
-          placeholder="Password"
+          placeholder="Password (min. 8)"
           name="password"
+          minlength="8"
           required
         />
+        <mat-error
+          class=""
+          *ngIf="signupForm.controls['password']?.hasError('minlength')"
+        >
+          Must be at least 8 characters long.
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
@@ -51,6 +58,7 @@
       (click)="registerUser()"
       color="primary"
       id="form-signup-btn"
+      [disabled]="signupForm.invalid"
     >
       Sign Up
     </button>
