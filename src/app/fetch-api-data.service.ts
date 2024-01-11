@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observer, catchError, pipe } from 'rxjs';
+import { of, catchError } from 'rxjs';
 import {
   HttpClient,
   HttpHeaders,
@@ -122,10 +122,21 @@ export class FetchApiDataService {
   addFavoriteMovie(movieID: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = JSON.parse(localStorage.getItem('user') || '{}');
+    user.favoriteMovies.push(movieID);
+    localStorage.setItem('user', JSON.stringify(user));
+
+    if (!this.isFavoriteMovie(movieID)) {
+      return of({ message: 'Movie is not in favorites.' });
+    }
+
     return this.http
-      .post(`${apiUrl}users/${user.username}/movies/${movieID}`, null, {
-        headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
-      })
+      .post(
+        `${apiUrl}users/${user.username}/movies/${movieID}`,
+        {},
+        {
+          headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+        }
+      )
       .pipe(
         map((res: any) => this.extractResponseData(res)),
         catchError(this.handleError)
@@ -136,6 +147,17 @@ export class FetchApiDataService {
   removeFavoriteMovie(movieID: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+    if (!this.isFavoriteMovie(movieID)) {
+      return of({ message: 'Movie is not in favorites.' });
+    }
+
+    const favIndex = user.favoriteMovies.indexOf(movieID);
+    if (favIndex > -1) {
+      user.favoriteMovies.splice(favIndex, 1);
+    }
+    localStorage.setItem('user', JSON.stringify(user));
+
     return this.http
       .delete(`${apiUrl}users/${user.username}/movies/${movieID}`, {
         headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
