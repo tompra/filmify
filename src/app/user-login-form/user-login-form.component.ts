@@ -27,14 +27,23 @@ export class UserLoginFormComponent implements OnInit {
         localStorage.setItem('user', JSON.stringify(result.user));
         localStorage.setItem('token', result.token);
         this.dialogRef.close();
-        this.snackBar.open('user login successfully', 'OK', {
+        this.snackBar.open('User login successfully', 'OK', {
           duration: 2000,
+          panelClass: ['green-snackbar'],
         });
         this.router.navigate(['movies']);
       },
-      (response) => {
-        console.log('response', response);
-        this.snackBar.open(response, 'OK', { duration: 2000 });
+      (error) => {
+        console.log('error', error);
+        if (error === 'User not found. Please try again!') {
+          this.snackBar.open(error, 'Try again!', { duration: 2000 });
+        } else {
+          this.snackBar.open(
+            'An error occured while trying to login user',
+            'Try again',
+            { duration: 2000 }
+          );
+        }
       }
     );
   }

@@ -15,12 +15,12 @@ export class WelcomePageComponent {
 
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
-      width: '300px',
+      width: '320px',
     });
   }
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
-      width: '300px',
+      width: '320px',
     });
   }
 }

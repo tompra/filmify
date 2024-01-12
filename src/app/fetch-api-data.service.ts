@@ -29,7 +29,7 @@ export class FetchApiDataService {
     console.log('userDetails login', userDetails);
     return this.http
       .post(`${apiUrl}login`, userDetails)
-      .pipe(catchError(this.handleError));
+      .pipe(catchError(this.handleLoginError));
   }
 
   // getAllMovies
@@ -221,5 +221,19 @@ export class FetchApiDataService {
     }
 
     return throwError(errorMessage);
+  }
+
+  // handle Login error
+
+  private handleLoginError(error: HttpErrorResponse): Observable<any> {
+    console.log('Error occured in login user:', error);
+    if (
+      error.status === 400 &&
+      !error.error.user &&
+      error.error.message === 'Something is not right'
+    ) {
+      return throwError('User not found. Please try again!');
+    }
+    return this.handleError(error);
   }
 }
