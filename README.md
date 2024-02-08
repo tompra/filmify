@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 7. Navigate to: `http://localhost:4200/`
 
 ## Live Demo
-[!Portfolio](https://tompra.github.io/filmify/)
+[Live Project](https://tompra.github.io/filmify/)
 
 ## Build
 
