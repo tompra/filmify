@@ -19,6 +19,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 6. Run the development server: `ng serve`
 7. Navigate to: `http://localhost:4200/`
 
+## Project Dependencies
+| Dependency                         | Description                                                                           |
+|------------------------------------|---------------------------------------------------------------------------------------|
+| @angular/animations                | Provides support for animations in Angular applications.                               |
+| @angular/cdk                       | Provides Angular Material components that are separate from the Angular Material library. |
+| @angular/common                    | Contains common utilities shared between Angular applications.                         |
+| @angular/compiler                  | Provides template compilation services for Angular applications.                       |
+| @angular/core                      | Contains Angular core functionality and features.                                      |
+| @angular/forms                     | Provides support for creating forms in Angular applications.                           |
+| @angular/material                  | A UI component library for Angular applications.                                        |
+| @angular/router                    | Provides routing and navigation capabilities for Angular applications.                 |
+| rxjs                               | A library for reactive programming using Observables.                                   |
+| tslib                              | A runtime library for TypeScript.                                                       |
+| @angular-devkit/build-angular      | Provides Angular build tools and utilities.                                             |
+| @angular/cli                       | Command-line interface for Angular development.                                         |
+| @angular/compiler-cli              | Command-line interface for Angular compiler.                                            |
+| @types/jasmine                    | Provides TypeScript type definitions for Jasmine.                                       |
+| angular-cli-ghpages                | A tool for deploying Angular CLI applications to GitHub Pages.                          |
+| typescript                         | A superset of JavaScript that adds optional static typing.                              |
+
+
 ## Live Demo
 [Live Project](https://tompra.github.io/filmify/)
 
