@@ -1,14 +1,26 @@
 # FilmifyClient
 
+![Screenshot 2024-02-08 at 12 17 44](https://github.com/tompra/filmify/assets/143709419/cb7b7182-6ce4-4f4e-a1c9-611e526e6011)
+
+## Description
+Using Angular, build the client-side for an app called popcornHub based on its existing server-side code (REST API and database).
+
+## Objective 
+By the end of the project, you’ll have a complete web app (client-side and server-side) built using full-stack JavaScript technologies. This project will demonstrate your mastery of full-stack JavaScript development. The complete tech stack to master includes the MEAN (MongoDB, Express, Angular, and Node.js) stack.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Development server
+## How to get the project running
+1. Create a directory in your local computer:`mkdir <name_your_directory>`
+2. Clone the GitHub repository using the command: `git clone <repository-url>`
+3. Install Angular CLI: `npm install -g @angular/cli`
+4. Navigate to the project directory: `cd <project-directory>`
+5. Install dependencies: `npm install`
+6. Run the development server: `ng serve`
+7. Navigate to: `http://localhost:4200/`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Live Demo
+[!Portfolio](https://tompra.github.io/filmify/)
 
 ## Build
 
